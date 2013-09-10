@@ -1,3 +1,10 @@
 PartyMaster::Application.routes.draw do
-  devise_for :users
+  namespace :api do
+    namespace :v1 do
+      namespace :auth do
+        devise_for :users, controllers: { sessions: 'api/v1/auth/sessions' }
+        #resources :sessions, only: [:create, :destroy]
+      end
+    end
+  end
 end
