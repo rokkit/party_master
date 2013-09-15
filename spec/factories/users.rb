@@ -6,5 +6,6 @@ FactoryGirl.define do
     token "token"
     email "maks_ohs@vk.com"
     password "password"
+    authentication_token "ssid"
   end
 end
