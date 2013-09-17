@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'sqlite3'
@@ -18,6 +18,12 @@ gem 'figaro'
 gem 'rolify'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'thin'
+gem 'rubber'
+gem 'open4'
+gem 'gelf'
+gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
+gem 'graylog2-resque'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -40,3 +46,8 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+gem 'rubber'
+gem 'open4'
+gem 'gelf'
+gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
+gem 'graylog2-resque'
