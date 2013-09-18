@@ -1,0 +1,62 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: party
+  domain: threewaystudio.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: web
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: haproxy
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: app
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: passenger
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: apache
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: db
+    options:
+      primary: true
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql_master
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-7c389210
+  image_type: t1.micro
+  image_id: ami-a29943cb
+  security_groups:
+  - default
+  - web
+  - party
+  - haproxy
+  - app
+  - passenger
+  - apache
+  - db
+  - postgresql
+  - postgresql_master
+  - collectd
+  - monit
+  external_host: ec2-54-211-251-192.compute-1.amazonaws.com
+  external_ip: 54.211.251.192
+  internal_host: ip-10-164-29-164.ec2.internal
+  internal_ip: 10.164.29.164
+  zone: us-east-1c
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}

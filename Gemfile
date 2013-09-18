@@ -23,6 +23,7 @@ gem 'open4'
 gem 'gelf'
 gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
 gem 'graylog2-resque'
+gem 'therubyracer', platform: :ruby
 
 group :development do
   gem 'better_errors'
@@ -40,6 +41,10 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+end
+
+group :production do
+  gem 'pg'
 end
 group :test do
   gem 'capybara'
