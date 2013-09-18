@@ -58,6 +58,16 @@ set :rails_env, "production"
     run "sudo sv restart pm"
    end
  end
+ 
+ after 'deploy:update_code', 'deploy:symlink_db'
+
+ namespace :deploy do
+   desc "Symlinks the database.yml"
+   task :symlink_db, :roles => :app do
+     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
+   end
+ end
 # # This is a sample Capistrano config file for rubber
 # 
 # set :rails_env, Rubber.env
