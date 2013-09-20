@@ -51,10 +51,6 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
-gem 'rubber'
-gem 'open4'
-gem 'gelf'
-gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
-gem 'graylog2-resque'
+
 gem 'sidekiq'
 gem 'slim'
