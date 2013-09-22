@@ -2,6 +2,7 @@ class Api::V1::Auth::SessionsController < Devise::SessionsController
   #include Devise::Controllers::InternalHelpers
   respond_to :json
   skip_before_filter :verify_authenticity_token  
+  before_action :ensure_required_params_exists
   # POST
   # Generation users session
   # Find or create user by oauth token
@@ -16,12 +17,10 @@ class Api::V1::Auth::SessionsController < Devise::SessionsController
                                      password: "password", 
                                      password_confirmation: "password" if check_user_on_provider params[:username], params[:provider]
       end
-      if resource.token == params[:token]
         sign_in(resource_name, resource)
         resource.ensure_authentication_token!
         ssid = resource.authentication_token
         render json: { user: resource, ssid: ssid }, status: :created
-      end
   end
   
   private 
@@ -30,6 +29,14 @@ class Api::V1::Auth::SessionsController < Devise::SessionsController
       true
     else
       render json: nil, status: 401
+    end
+  end
+  def ensure_required_params_exists
+    begin
+      params.require(:username)
+    rescue ActionController::ParameterMissing
+      render json: { error: "params not present" }, status: 401
+      return
     end
   end
 end
