@@ -1,12 +1,12 @@
 # REQUIRED: The name of your application
-app_name: party_master
+app_name: partymaster
 
 # REQUIRED: The system user to run your app servers as
 app_user: app
 
 # REQUIRED: Notification emails (e.g. monit) get sent to this address
 #
-admin_email: "root@#{full_host}"
+admin_email: "info@#{full_host}"
 
 # OPTIONAL: If not set, you won't be able to access web_tools
 # server (graphite, graylog, monit status, haproxy status, etc)
@@ -18,7 +18,7 @@ timezone: US/Eastern
 
 # REQUIRED: the domain all the instances should be associated with
 #
-domain: foo.com
+domain: threewaystudio.com
 
 # OPTIONAL: See rubber-dns.yml for dns configuration
 # This lets rubber update a dynamic dns service with the instance alias

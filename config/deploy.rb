@@ -58,6 +58,11 @@ namespace :deploy do
     end
   end
 end
+    after "deploy:setup", "fix_mnt_permissions" 
+    task :fix_mnt_permissions do 
+      rsudo "chown -R #{rubber_env.app_user}:#{rubber_env.app_user} 
+#{deploy_to}" 
+    end 
 
 namespace :deploy do
   namespace :assets do

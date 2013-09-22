@@ -1,7 +1,7 @@
 ---
 - !ruby/object:Rubber::Configuration::InstanceItem
-  name: party_master
-  domain: foo.com
+  name: partymaster
+  domain: threewaystudio.com
   roles:
   - !ruby/object:Rubber::Configuration::RoleItem
     name: app
@@ -58,34 +58,34 @@
   - !ruby/object:Rubber::Configuration::RoleItem
     name: web_tools
     options: {}
-  instance_id: i-cb673fb1
+  instance_id: i-c95a9eb1
   image_type: m1.small
   image_id: ami-b6089bdf
   security_groups:
-  - party_master_production_default
-  - party_master_production_web
-  - party_master_production_web_tools
-  - party_master_production_party_master
-  - party_master_production_app
-  - party_master_production_passenger_nginx
-  - party_master_production_background_worker
-  - party_master_production_sidekiq
-  - party_master_production_collectd
-  - party_master_production_common
-  - party_master_production_monit
-  - party_master_production_db
-  - party_master_production_postgresql
-  - party_master_production_postgresql_master
-  - party_master_production_examples
-  - party_master_production_graphite_server
-  - party_master_production_graphite_web
-  - party_master_production_haproxy
-  - party_master_production_redis
-  - party_master_production_redis_master
-  external_host: ec2-50-19-204-221.compute-1.amazonaws.com
-  external_ip: 50.19.204.221
-  internal_host: ip-10-40-103-95.ec2.internal
-  internal_ip: 10.40.103.95
+  - partymaster_production_default
+  - partymaster_production_web
+  - partymaster_production_web_tools
+  - partymaster_production_partymaster
+  - partymaster_production_app
+  - partymaster_production_passenger_nginx
+  - partymaster_production_background_worker
+  - partymaster_production_sidekiq
+  - partymaster_production_collectd
+  - partymaster_production_common
+  - partymaster_production_monit
+  - partymaster_production_db
+  - partymaster_production_postgresql
+  - partymaster_production_postgresql_master
+  - partymaster_production_examples
+  - partymaster_production_graphite_server
+  - partymaster_production_graphite_web
+  - partymaster_production_haproxy
+  - partymaster_production_redis
+  - partymaster_production_redis_master
+  external_host: ec2-174-129-24-122.compute-1.amazonaws.com
+  external_ip: 174.129.24.122
+  internal_host: ip-10-185-10-156.ec2.internal
+  internal_ip: 10.185.10.156
   zone: us-east-1c
   provider: aws
   platform: linux
